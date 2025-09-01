@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --webThemeColor: blue;
+        }
+        #dynamic-widget{
+            max-width: 450px;
+        }
+        .formPlaceHolder {
+    width: 100%;
+    max-width: 450px;
+    height: 481px;
+    border-radius: 8px;
+    background: #edf2f7;
+    padding: 15px
+}
+
+.skeleton {
+    position: relative;
+    background: #e2e2e2;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1
+}
+
+.skeleton:after {
+    content: "";
+    position: absolute;
+    background: #f2f2f2;
+    width: 1%;
+    height: 100%;
+    z-index: 2;
+    box-shadow: 0 0 40px 40px #f2f2f2;
+    animation: shimmer 1s ease infinite
+}
+
+@keyframes shimmer {
+    0% {
+        left: 0;
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0
+    }
+}
+
+.skeleton-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.skeletonBoxWrap {
+    padding: 0 5px;
+    margin-bottom: 10px
+}
+
+.skeletonBoxWrap:nth-child(1),
+.skeletonBoxWrap:nth-child(2),
+.skeletonBoxWrap:nth-child(6),
+.skeletonBoxWrap:nth-child(7),
+.skeletonBoxWrap:nth-child(8),
+.skeletonBoxWrap:nth-child(9) {
+    width: 50%
+}
+
+.skeletonBoxWrap:nth-child(3),
+.skeletonBoxWrap:nth-child(5),
+.skeletonBoxWrap:nth-child(10) {
+    width: 100%
+}
+
+.skeletonBoxWrap:nth-child(1) .skeleton,
+.skeletonBoxWrap:nth-child(2) .skeleton {
+    height: 35px
+}
+
+.skeletonBoxWrap:nth-child(3) .skeleton,
+.skeletonBoxWrap:nth-child(5) .skeleton,
+.skeletonBoxWrap:nth-child(6) .skeleton,
+.skeletonBoxWrap:nth-child(7) .skeleton,
+.skeletonBoxWrap:nth-child(8) .skeleton,
+.skeletonBoxWrap:nth-child(9) .skeleton {
+    height: 45px
+}
+
+.skeletonBoxWrap:nth-child(10) .skeleton {
+    margin-top: 10px;
+    height: 50px
+}
+
+.skeleton.smallSk {
+    height: 14px !important;
+    width: 85px;
+    margin-bottom: 5px
+}
+
+.skeletonBoxWrap:nth-child(4) .skeleton.smallSk {
+    margin-top: 13px;
+    margin-bottom: 0
+}
+@media screen and (max-width:992px) {
+    #dynamic-widget{
+        max-width: 300px;
+    }
+}
+@media screen and (max-width: 768px) {
+    #dynamic-widget{
+        max-width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="dynamic-widget">
+        <div class="formPlaceHolder">
+                        <div class="skeleton-wrapper">
+                            <div class="skeletonBoxWrap">
+                                <div class="skeleton"></div>
+                            </div>
+                            <div class="skeletonBoxWrap">
+                                <div class="skeleton"></div>
+                            </div>
+                            <div class="skeletonBoxWrap">
+                                <div class="skeleton smallSk"></div>
+                                <div class="skeleton"></div>
+                            </div>
+                            <div class="skeletonBoxWrap">
+                                <div class="skeleton smallSk"></div>
+                            </div>
+                            <div class="skeletonBoxWrap">
+                                <div class="skeleton smallSk"></div>
+                                <div class="skeleton"></div>
+                            </div>
+                            <div class="skeletonBoxWrap">
+                                <div class="skeleton smallSk"></div>
+                                <div class="skeleton"></div>
+                            </div>
+                            <div class="skeletonBoxWrap">
+                                <div class="skeleton smallSk"></div>
+                                <div class="skeleton"></div>
+                            </div>
+                            <div class="skeletonBoxWrap">
+                                <div class="skeleton smallSk"></div>
+                                <div class="skeleton"></div>
+                            </div>
+                            <div class="skeletonBoxWrap">
+                                <div class="skeleton smallSk"></div>
+                                <div class="skeleton"></div>
+                            </div>
+                            <div class="skeletonBoxWrap">
+                                <div class="skeleton"></div>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+    <script src="form-loader.js"></script>
+</body>
+</html>
